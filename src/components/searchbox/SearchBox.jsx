@@ -1,14 +1,15 @@
-import { useDispatch } from "react-redux";
-import { changeFilter } from "../../redux/filtersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilter, selectNameFilter } from "../../redux/filtersSlice";
 import css from "./SearchBox.module.css";
+import { useDebouncedCallback } from "use-debounce";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
-  const handleChange = (e) => {
-    e.preventDefault();
-
-    dispatch(changeFilter(e.target.value.trim()));
-  };
+  const filterContakts = useSelector(selectNameFilter);
+  const debounced = useDebouncedCallback(
+    (value) => dispatch(changeFilter(value.trim())),
+    400
+  );
 
   return (
     <div className={css.seachContact}>
@@ -19,7 +20,8 @@ const SearchBox = () => {
         id="search"
         type="text"
         name="search"
-        onChange={handleChange}
+        defaultValue={filterContakts}
+        onChange={(e) => debounced(e.target.value)}
         className={css.input}
         placeholder="Enter contact...."
       />
