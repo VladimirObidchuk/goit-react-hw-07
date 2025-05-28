@@ -1,0 +1,13 @@
+.seachContact {
+  grid-area: 1 / 2 / 2 / 3;
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.input {
+  outline: none;
+  border-radius: 10px;
+  padding: 5px;
+}

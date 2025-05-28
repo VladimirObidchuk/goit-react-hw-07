@@ -1,0 +1,28 @@
+.search {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  gap: 5px;
+  padding: 5px;
+}
+.field {
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+}
+.label {
+  font-size: 20px;
+}
+.btn {
+  color: #fff;
+  background-color: #85a8eb;
+}
+.btn:hover {
+  background-color: #4c6799;
+}
