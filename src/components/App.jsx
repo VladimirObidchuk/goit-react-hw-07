@@ -1,6 +1,6 @@
 import "modern-normalize";
 import "./App.css";
-// import ContactForm from "./contactform/ContactForm";
+import ContactForm from "./contactform/ContactForm";
 import ContactList from "./contactlist/ContactList";
 import SearchBox from "./searchbox/SearchBox";
 import { useSelector } from "react-redux";
@@ -13,7 +13,7 @@ export default function App() {
   const error = useSelector((state) => state.contacts.error);
   return (
     <div className="main">
-      {/* <ContactForm /> */}
+      <ContactForm />
       <SearchBox />
       {isLoading && !error && <strong>Loading contacts? please wait...</strong>}
       <ContactList />
